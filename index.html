@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Money</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Simple Money</h1>
+    <p>Keep track of where your money goes.</p>
+
+    <h2>Add an expense</h2>
+    <div class="form">
+      <input type="text" id="description" placeholder="Description">
+      <input type="number" id="amount" placeholder="Amount">
+      <select id="category">
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Bills</option>
+        <option>Other</option>
+      </select>
+      <input type="date" id="date">
+      <button onclick="addExpence()">Add</button>
+    </div>
+
+    <h2>Your expenses</h2>
+    <div class="toolbar">
+      <label>
+        Show:
+        <select id="filter" onchange="render()">
+          <option>All</option>
+          <option>Food</option>
+          <option value="travel">Travel</option>
+          <option>Bills</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <button onclick="clearAll()">Clear All</button>
+    </div>
+
+    <div class="summary">
+      <span><span id="count">0</span> expenses</span>
+      <strong>Total: ₹<span id="total">0</span></strong>
+    </div>
+
+    <ul id="expenseList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
